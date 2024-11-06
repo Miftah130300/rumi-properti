@@ -1,5 +1,6 @@
-import Navbar from "src/components/header"
-import Footer from "src/components/footer"
+import dynamic from "next/dynamic";
+const Footer = dynamic(() => import('src/components/footer'), { ssr: false });
+const Navbar = dynamic(() => import('src/components/header'), { ssr: false });
 
 export default function Contact() {
     return (

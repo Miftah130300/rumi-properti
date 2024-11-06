@@ -1,10 +1,11 @@
 import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import Link from "next/link";
-import Navbar from "src/components/header";
-import Footer from "src/components/footer";
 import Image from "next/image";
 import home from "/public/asset/1.webp"
+import dynamic from "next/dynamic";
+const Footer = dynamic(() => import('src/components/footer'), { ssr: false });
+const Navbar = dynamic(() => import('src/components/header'), { ssr: false });
 
 // Update interface Article sesuai data JSON
 interface Article {

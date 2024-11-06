@@ -1,8 +1,9 @@
-import Navbar from "src/components/header";
 import Image from "next/image";
-import Footer from "src/components/footer";
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import dynamic from "next/dynamic";
+const Footer = dynamic(() => import('src/components/footer'), { ssr: false });
+const Navbar = dynamic(() => import('src/components/header'), { ssr: false });
 
 interface Properti {
     id: number;

@@ -1,5 +1,6 @@
-import Navbar from "src/components/header"
-import Footer from "src/components/footer"
+import dynamic from "next/dynamic";
+const Footer = dynamic(() => import('src/components/footer'), { ssr: false });
+const Navbar = dynamic(() => import('src/components/header'), { ssr: false });
 import Image from "next/image"
 import home from "/public/asset/1.webp"
 import CarouselTestimony from "src/components/carouselTestimony/carouselTestimony"

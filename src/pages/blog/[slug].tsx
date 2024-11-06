@@ -1,11 +1,12 @@
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
-import Navbar from "src/components/header";
-import Footer from "src/components/footer";
 import Link from "next/link";
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 import Image from "next/image";
+import dynamic from "next/dynamic";
+const Footer = dynamic(() => import('src/components/footer'), { ssr: false });
+const Navbar = dynamic(() => import('src/components/header'), { ssr: false });
 
 interface Article {
     id: number;

@@ -1,9 +1,10 @@
 import { useState, useEffect } from "react";
 import { useRouter } from "next/router";
-import Footer from "src/components/footer";
-import Navbar from "src/components/header";
 import CarouselProperti from "src/components/carouselProperti/carouselProperti";
 import type { EmblaOptionsType } from "embla-carousel";
+import dynamic from "next/dynamic";
+const Footer = dynamic(() => import('src/components/footer'), { ssr: false });
+const Navbar = dynamic(() => import('src/components/header'), { ssr: false });
 
 interface Properti {
     id: number;
